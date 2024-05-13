@@ -183,16 +183,16 @@ function love.update(dt)
 end
 
 function love.draw()
-	local ww = love.graphics.getWidth()
-	local wh = love.graphics.getHeight()
+	local winWidth = love.graphics.getWidth()
+	local winHeight = love.graphics.getHeight()
 
 	love.graphics.clear(0.25, 0.25, 0.3)
 
 	local t = tostring(toplevel)
 	local w = font:getWidth(t)
 	local h = font:getHeight()
-	local x = (ww - w) / 2
-	local y = (wh - h) / 2
+	local x = (winWidth - w) / 2
+	local y = (winHeight - h) / 2
 
 	local expr, ex, ew
 
@@ -243,7 +243,7 @@ function love.draw()
 	love.graphics.print(
 		hoverMsg,
 		smallFont,
-		math.floor((ww - hw) / 2),
+		math.floor((winWidth - hw) / 2),
 		math.floor(y + h + smallFont:getHeight() / 2)
 	)
 end
